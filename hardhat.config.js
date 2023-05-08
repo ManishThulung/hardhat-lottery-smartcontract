@@ -28,6 +28,14 @@ module.exports = {
     },
   },
   solidity: "0.8.7",
+  gasReporter: {
+    enabled: false,
+    outputFile: "gas-report.txt",
+    noColors: true,
+    currency: "USD",
+    coinmarketcap: COINMARKET_API_KRY,
+    token: "MATIC",
+  },
   namedAccounts: {
     deployer: {
       default: 0,
