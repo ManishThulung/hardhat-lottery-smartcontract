@@ -36,8 +36,8 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
     vrfCoordinatorV2Address,
     entranceFee,
     gasLane,
-    subscriptionId,
     callBackGasLimit,
+    subscriptionId,
     interval,
   ]
 
