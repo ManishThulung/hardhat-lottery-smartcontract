@@ -52,6 +52,11 @@ module.exports = async function ({ getNamedAccounts, deployments }) {
     console.log("verifying....")
     await verify(raffle.address, args)
   }
+
+  console.log("Enter lottery with command:")
+  const networkName = network.name == "hardhat" ? "localhost" : network.name
+  console.log(`yarn hardhat run scripts/enterRaffle.js --network ${networkName}`)
+
   console.log("---------------------------------------")
 }
 
