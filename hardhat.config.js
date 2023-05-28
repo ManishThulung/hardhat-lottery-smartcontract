@@ -27,6 +27,11 @@ module.exports = {
       accounts: [PRIVATE_KEY],
     },
   },
+  etherscan: {
+    apiKey: {
+      goerli: ETHERSCAN_API_KEY,
+    },
+  },
   solidity: "0.8.7",
   gasReporter: {
     enabled: false,
