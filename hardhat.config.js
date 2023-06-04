@@ -9,6 +9,7 @@ require("dotenv").config()
 /** @type import('hardhat/config').HardhatUserConfig */
 
 const GOERLY_RPC_URL = process.env.GOERLY_RPC_URL
+const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL
 const PRIVATE_KEY = process.env.PRIVATE_KEY
 const COINMARKET_API_KRY = process.env.COINMARKET_API_KRY
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
@@ -20,6 +21,16 @@ module.exports = {
       chainId: 31337,
       blockConfirmations: 1,
     },
+    sepolia: {
+      url: SEPOLIA_RPC_URL,
+      accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+      //   accounts: {
+      //     mnemonic: MNEMONIC,
+      //   },
+      blockConfirmations: 6,
+      saveDeployments: true,
+      chainId: 11155111,
+    },
     goerli: {
       chainId: 5,
       blockConfirmations: 6,
@@ -29,7 +40,7 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
-      goerli: ETHERSCAN_API_KEY,
+      sepolia: ETHERSCAN_API_KEY,
     },
   },
   solidity: "0.8.7",
